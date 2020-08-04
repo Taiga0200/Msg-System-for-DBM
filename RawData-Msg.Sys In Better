@@ -1,0 +1,259 @@
+this rawdata contains check if a user is mentioned and if you entered a message to send + error messages!
+
+
+  "name": "Msg",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "udWqQ",
+  "actions": [
+    {
+      "comment": "❗ System Wurde 100% Von Mir Erstellt! ❗",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "comment": "❗ Auf keinen fall ein Kommentar löschen, sonnst funktioniert die abgleichung nicht! ❗",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "comment": "❗ Ich emphele nix zu ändern!, und auf keinen fall was bei 12 - 16 ändern ❗",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "comment": "❗ Sys by Taiga#0200! © ❗",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: You need to ping someone to msg them!",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "2",
+      "iftrue": "2",
+      "iftrueVal": "12",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Please enter a message!",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "server",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "mem.user",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "mem.mention",
+      "name": "Store Member Info"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "member.msg",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "mem.message",
+      "name": "Store Command Params"
+    },
+    {
+      "comment": "❗ Hier Embed Titel ❗",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "title": "Message",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "true",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "comment": "❗ Hier Die Message Beschreibung: ❗",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Hey ${mentionedUser}! you got a message from: **${tempVars(\"mem.user\")}**\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "comment": "❗ Hier Nix Verändern ❗ ❗",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Message:",
+      "message": "${tempVars(\"mem.message\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Info",
+      "message": "To Answer go to the Server: **${tempVars(\"server\")}**,\nand type **k!msg ${tempVars(\"mem.user\")}** **[Message]**",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "member.msg",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "2",
+      "iffalseVal": "33",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "❗ Hier die Naricht, wenn sie erfolgreich gesendet wurde ❗",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Succesfully send the message to: **${tempVars(\"mem.mention\")}**",
+      "storage": "1",
+      "varName2": "succesfully.message",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "succesfully.message",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "comment": "---------------------",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "---------------------",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "comment": "❗ Hier die Message, wenn die naricht nicht gesendet worden konnte ❗",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Couldn't send the message to: **${tempVars(\"mem.mention\")}**\n**Reasons:** \n1: He Blocked me.\n2: He disabled his dm's",
+      "storage": "1",
+      "varName2": "error.message",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "error.message",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ]
+}
