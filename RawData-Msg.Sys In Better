@@ -1,6 +1,7 @@
 this rawdata contains check if a user is mentioned and if you entered a message to send + error messages!
 
 
+  {
   "name": "Msg",
   "permissions": "NONE",
   "restriction": "1",
@@ -57,7 +58,7 @@ this rawdata contains check if a user is mentioned and if you entered a message 
     },
     {
       "condition": "0",
-      "comparison": "2",
+      "comparison": "3",
       "value": "2",
       "iftrue": "2",
       "iftrueVal": "12",
